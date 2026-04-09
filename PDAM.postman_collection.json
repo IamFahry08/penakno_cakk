@@ -1,0 +1,1386 @@
+{
+  "info": {
+    "_postman_id": "0b791125-7ba5-41ff-add7-66f8c7a9c8e7",
+    "name": "PDAM",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "46995326",
+    "_collection_link": "https://go.postman.co/collection/46995326-0b791125-7ba5-41ff-add7-66f8c7a9c8e7?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "APP OWNERS",
+      "item": [
+        {
+          "name": "REGISTER",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\":\"fahryirvanyudiansyah@gmail.com\",\n    \"password\":\"121208fr\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE-URL}}/app-owners",
+              "host": [
+                "{{BASE-URL}}"
+              ],
+              "path": [
+                "app-owners"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "AUTHENTICATION",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\":\"your private email\",\n    \"password\":\"your password\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE-URL}}/app-owners/auth",
+              "host": [
+                "{{BASE-URL}}"
+              ],
+              "path": [
+                "app-owners",
+                "auth"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "ADMIN",
+      "item": [
+        {
+          "name": "REGISTER",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "app-key",
+                "value": "{{APP-KEY}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"username\":\"adminfahry1\",\n    \"password\":\"121208fr\",\n    \"name\": \"Admin fahry satu\",\n    \"phone\":\"085872993245\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE-URL}}/admins",
+              "host": [
+                "{{BASE-URL}}"
+              ],
+              "path": [
+                "admins"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "SHOW ALL",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzE5LCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NjkwNDUwMzAsImV4cCI6MTc2OTEzMTQzMH0.g5LdmLnM937P5e0c9LcYH0IMKVNKJ_E8QSrbL6A19Bg",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "app-key",
+                "value": "{{APP-KEY}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE-URL}}/admins?page=1&quantity=10",
+              "host": [
+                "{{BASE-URL}}"
+              ],
+              "path": [
+                "admins"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "quantity",
+                  "value": "10"
+                },
+                {
+                  "key": "search",
+                  "value": "admin",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "SHOW BY ID",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywicm9sZSI6IkFETUlOIiwiaWF0IjoxNzM4ODA1MzAwLCJleHAiOjE3Mzg4OTE3MDB9.4bGkArrdZZ1DlIhOOyRsQ_HyUJYSanBTDZwo0Xfdm8I",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "app-key",
+                "value": "{{APP-KEY}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE-URL}}/admins/2",
+              "host": [
+                "{{BASE-URL}}"
+              ],
+              "path": [
+                "admins",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "SHOW ME",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzU5LCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NjkwNDU1MDcsImV4cCI6MTc2OTEzMTkwN30.AlzkugvcFMxYR9kSmgJdoFTSpV-F3ZdfT52-bCKHABU",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "app-key",
+                "value": "{{APP-KEY}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE-URL}}/admins/me",
+              "host": [
+                "{{BASE-URL}}"
+              ],
+              "path": [
+                "admins",
+                "me"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "UPDATE",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywicm9sZSI6IkFETUlOIiwiaWF0IjoxNzM4ODA1MzAwLCJleHAiOjE3Mzg4OTE3MDB9.4bGkArrdZZ1DlIhOOyRsQ_HyUJYSanBTDZwo0Xfdm8I",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "app-key",
+                "value": "{{APP-KEY}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"password\":\"admin-1\",\n    \"name\": \"Admin 1\",\n    \"phone\":\"081335810890\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE-URL}}/admins/1",
+              "host": [
+                "{{BASE-URL}}"
+              ],
+              "path": [
+                "admins",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DROP",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzE5LCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NjkwNDUwMzAsImV4cCI6MTc2OTEzMTQzMH0.g5LdmLnM937P5e0c9LcYH0IMKVNKJ_E8QSrbL6A19Bg",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "app-key",
+                "value": "{{APP-KEY}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE-URL}}/admins/9",
+              "host": [
+                "{{BASE-URL}}"
+              ],
+              "path": [
+                "admins",
+                "9"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "CUSTOMER",
+      "item": [
+        {
+          "name": "REGISTER",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "app-key",
+                "value": "{{APP-KEY}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"username\": \"iamfahrycustomer\",\n    \"password\": \"121208fr\",\n    \"customer_number\": \"080808080808\", /* NIK*/\n    \"address\":\"Sukun, Malang\",\n    \"service_id\": 364,\n    \"name\": \"iamfahrycustomer\",\n    \"phone\": \"09090909090909\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE-URL}}/customers",
+              "host": [
+                "{{BASE-URL}}"
+              ],
+              "path": [
+                "customers"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "SHOW ALL",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzU5LCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3Njk2NTExOTAsImV4cCI6MTc2OTczNzU5MH0.Ns8taX1fn0ii6kHnfls6boN6U4LLmZZ33bWPwBATFpU",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "app-key",
+                "value": "{{APP-KEY}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE-URL}}/customers?page=1&quantity=10&search=",
+              "host": [
+                "{{BASE-URL}}"
+              ],
+              "path": [
+                "customers"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "quantity",
+                  "value": "10"
+                },
+                {
+                  "key": "search",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "SHOW BY ID",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywicm9sZSI6IkFETUlOIiwiaWF0IjoxNzM4ODA1MzAwLCJleHAiOjE3Mzg4OTE3MDB9.4bGkArrdZZ1DlIhOOyRsQ_HyUJYSanBTDZwo0Xfdm8I",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "app-key",
+                "value": "{{APP-KEY}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE-URL}}/customers/1",
+              "host": [
+                "{{BASE-URL}}"
+              ],
+              "path": [
+                "customers",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "SHOW ME",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywicm9sZSI6IkFETUlOIiwiaWF0IjoxNzM4ODA1MzAwLCJleHAiOjE3Mzg4OTE3MDB9.4bGkArrdZZ1DlIhOOyRsQ_HyUJYSanBTDZwo0Xfdm8I",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "app-key",
+                "value": "{{APP-KEY}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE-URL}}/customers/me",
+              "host": [
+                "{{BASE-URL}}"
+              ],
+              "path": [
+                "customers",
+                "me"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "UPDATE",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywicm9sZSI6IkFETUlOIiwiaWF0IjoxNzM4ODA1MzAwLCJleHAiOjE3Mzg4OTE3MDB9.4bGkArrdZZ1DlIhOOyRsQ_HyUJYSanBTDZwo0Xfdm8I",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "app-key",
+                "value": "{{APP-KEY}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\":\"Customer 1\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE-URL}}/customers/",
+              "host": [
+                "{{BASE-URL}}"
+              ],
+              "path": [
+                "customers",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DROP",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OSwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzY4MjAzMTM4LCJleHAiOjE3NjgyODk1Mzh9.tgqpsb8CZNkl0mlceZa93A5WGLYGmAINy0grrpLb7dE",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "app-key",
+                "value": "{{APP-KEY}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE-URL}}/customers/118",
+              "host": [
+                "{{BASE-URL}}"
+              ],
+              "path": [
+                "customers",
+                "118"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "SERVICES",
+      "item": [
+        {
+          "name": "CREATE",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzU5LCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3Njk0ODg5MjIsImV4cCI6MTc2OTU3NTMyMn0.zC7qqzlVjAS_-Kpsnp5mNh_dxeQhfH8vVrUrkq73KYM",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "APP-KEY",
+                "value": "{{APP-KEY}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"mboh wes males aku\",\n    \"min_usage\": 27,\n    \"max_usage\": 35,\n    \"price\": 1000000\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE-URL}}/services",
+              "host": [
+                "{{BASE-URL}}"
+              ],
+              "path": [
+                "services"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "UPDATE",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzU5LCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3Njk2NTExOTAsImV4cCI6MTc2OTczNzU5MH0.Ns8taX1fn0ii6kHnfls6boN6U4LLmZZ33bWPwBATFpU",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "APP-KEY",
+                "value": "{{APP-KEY}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    // \"max_usage\": 10,\n    \"price\": 676767\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE-URL}}/services/4",
+              "host": [
+                "{{BASE-URL}}"
+              ],
+              "path": [
+                "services",
+                "4"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DROP",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywicm9sZSI6IkFETUlOIiwiaWF0IjoxNzM4ODA1MzAwLCJleHAiOjE3Mzg4OTE3MDB9.4bGkArrdZZ1DlIhOOyRsQ_HyUJYSanBTDZwo0Xfdm8I",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "APP-KEY",
+                "value": "{{APP-KEY}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE-URL}}/services/3",
+              "host": [
+                "{{BASE-URL}}"
+              ],
+              "path": [
+                "services",
+                "3"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "SHOW ALL",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywicm9sZSI6IkFETUlOIiwiaWF0IjoxNzM4ODA1MzAwLCJleHAiOjE3Mzg4OTE3MDB9.4bGkArrdZZ1DlIhOOyRsQ_HyUJYSanBTDZwo0Xfdm8I",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "app-key",
+                "value": "{{APP-KEY}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE-URL}}/services?page=1&quantity=10",
+              "host": [
+                "{{BASE-URL}}"
+              ],
+              "path": [
+                "services"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "quantity",
+                  "value": "10"
+                },
+                {
+                  "key": "search",
+                  "value": "Tangga 2",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "SHOW BY ID",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzU5LCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NzAwOTk4MDIsImV4cCI6MTc3MDE4NjIwMn0.dR4dGnPnt4eiwI8X-JIPu5Y5o_1AWbjqgAAXQNUfTLceyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzU5LCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NzAwOTk4MDIsImV4cCI6MTc3MDE4NjIwMn0.dR4dGnPnt4eiwI8X-JIPu5Y5o_1AWbjqgAAXQNUfTLc",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "app-key",
+                "value": "{{APP-KEY}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE-URL}}/services/460",
+              "host": [
+                "{{BASE-URL}}"
+              ],
+              "path": [
+                "services",
+                "460"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "BILL",
+      "item": [
+        {
+          "name": "CREATE",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OSwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzY4MjAzMTM4LCJleHAiOjE3NjgyODk1Mzh9.tgqpsb8CZNkl0mlceZa93A5WGLYGmAINy0grrpLb7dE",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "app-key",
+                "value": "{{APP-KEY}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"customer_id\": 121,\n    \"service_id\": 102,\n    \"month\": 1,\n    \"year\": 2025,\n    \"measurement_number\": \"118\",\n    \"usage_value\": 20\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE-URL}}/bills",
+              "host": [
+                "{{BASE-URL}}"
+              ],
+              "path": [
+                "bills"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "SHOW ALL BY ADMIN",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywicm9sZSI6IkFETUlOIiwiaWF0IjoxNzM4ODA1MzAwLCJleHAiOjE3Mzg4OTE3MDB9.4bGkArrdZZ1DlIhOOyRsQ_HyUJYSanBTDZwo0Xfdm8I",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "app-key",
+                "value": "{{APP-KEY}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE-URL}}/bills?page=1&quantity=10&search=",
+              "host": [
+                "{{BASE-URL}}"
+              ],
+              "path": [
+                "bills"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "quantity",
+                  "value": "10"
+                },
+                {
+                  "key": "search",
+                  "value": ""
+                },
+                {
+                  "key": "start_date",
+                  "value": "2025-01-01",
+                  "disabled": true
+                },
+                {
+                  "key": "end_date",
+                  "value": "2025-03-02",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "SHOW DETAIL BY ADMIN",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IkNVU1RPTUVSIiwiaWF0IjoxNzM4ODI4OTcxLCJleHAiOjE3Mzg5MTUzNzF9.D1BYgg2EO1fhUGgJf8nly2ZG4NTFkcs2t4hcPV7gpGI",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "app-key",
+                "value": "{{APP-KEY}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE-URL}}/bills/1",
+              "host": [
+                "{{BASE-URL}}"
+              ],
+              "path": [
+                "bills",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "SHOW ALL BY CUSTOMER",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Nywicm9sZSI6IkNVU1RPTUVSIiwiaWF0IjoxNzY4MjA1MjE2LCJleHAiOjE3NjgyOTE2MTZ9.Hts8hV0iDW3LPuRgsOpEZLznTgHyZDIHHM44IgwJGuM",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "app-key",
+                "value": "{{APP-KEY}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE-URL}}/bills/me?page=1&quantity=10&search=",
+              "host": [
+                "{{BASE-URL}}"
+              ],
+              "path": [
+                "bills",
+                "me"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "quantity",
+                  "value": "10"
+                },
+                {
+                  "key": "search",
+                  "value": ""
+                },
+                {
+                  "key": "start_date",
+                  "value": "2025-01-01",
+                  "disabled": true
+                },
+                {
+                  "key": "end_date",
+                  "value": "2025-03-02",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "SHOW DETAIL BY CUSTOMER",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6IkNVU1RPTUVSIiwiaWF0IjoxNzM4ODI5OTkxLCJleHAiOjE3Mzg5MTYzOTF9.uwnDRYk2NPsJcklhmQ0XqI3sZXnc5u4Lyh3nQhE9sU8",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "app-key",
+                "value": "{{APP-KEY}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE-URL}}/bills/me/3",
+              "host": [
+                "{{BASE-URL}}"
+              ],
+              "path": [
+                "bills",
+                "me",
+                "3"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "UPDATE",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywicm9sZSI6IkFETUlOIiwiaWF0IjoxNzM4ODA1MzAwLCJleHAiOjE3Mzg4OTE3MDB9.4bGkArrdZZ1DlIhOOyRsQ_HyUJYSanBTDZwo0Xfdm8I",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "app-key",
+                "value": "{{APP-KEY}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    // \"customer_id\": 1, /** optional */\n    // \"service_id\": 2, /** optional */\n    // \"month\": 2, /** optional */\n    // \"year\": 2025, /** optional */\n    // \"measurement_number\": \"30041\", /** optional */\n    \"usage_value\": 25 /** optional */\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE-URL}}/bills/3",
+              "host": [
+                "{{BASE-URL}}"
+              ],
+              "path": [
+                "bills",
+                "3"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DROP",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywicm9sZSI6IkFETUlOIiwiaWF0IjoxNzM4ODA1MzAwLCJleHAiOjE3Mzg4OTE3MDB9.4bGkArrdZZ1DlIhOOyRsQ_HyUJYSanBTDZwo0Xfdm8I",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "app-key",
+                "value": "{{APP-KEY}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    // \"customer_id\": 1, /** optional */\n    // \"service_id\": 2, /** optional */\n    // \"month\": 2, /** optional */\n    // \"year\": 2025, /** optional */\n    // \"measurement_number\": \"30041\", /** optional */\n    \"usage_value\": 25 /** optional */\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE-URL}}/bills/4",
+              "host": [
+                "{{BASE-URL}}"
+              ],
+              "path": [
+                "bills",
+                "4"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "PAYMENTS",
+      "item": [
+        {
+          "name": "CREATE",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Nywicm9sZSI6IkNVU1RPTUVSIiwiaWF0IjoxNzY4MjA1MjE2LCJleHAiOjE3NjgyOTE2MTZ9.Hts8hV0iDW3LPuRgsOpEZLznTgHyZDIHHM44IgwJGuM",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "app-key",
+                "value": "{{APP-KEY}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "bill_id",
+                  "value": "11",
+                  "type": "text"
+                },
+                {
+                  "key": "file",
+                  "type": "file",
+                  "src": "/Users/fahry-mbpro/FAHRY 1/1. SMK TELKOM MALANG/kelas 11/SEMESTER 1/PKWU/FLUTTER PROJECT/flutter_projects/my_app_new/assets/logo/logo_kosanku.png"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{BASE-URL}}/payments",
+              "host": [
+                "{{BASE-URL}}"
+              ],
+              "path": [
+                "payments"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "SHOW ALL BY ADMIN",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OSwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzY4Mjc4OTMxLCJleHAiOjE3NjgzNjUzMzF9.ecfMM1PgdXSvUJOChU-CrEOeb_FxNDhsSKbphPOhk_g",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "app-key",
+                "value": "{{APP-KEY}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE-URL}}/payments?page=1&quantity=100&search",
+              "host": [
+                "{{BASE-URL}}"
+              ],
+              "path": [
+                "payments"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "quantity",
+                  "value": "100"
+                },
+                {
+                  "key": "search",
+                  "value": null
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "SHOW DETAIL BY ADMIN",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzM4ODk1NzU1LCJleHAiOjE3Mzg5ODIxNTV9.1KMQGILvTOc5D5Gonr82lyn0Q1c5-tq_99byc1T90Fk",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "app-key",
+                "value": "{{APP-KEY}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE-URL}}/payments/3",
+              "host": [
+                "{{BASE-URL}}"
+              ],
+              "path": [
+                "payments",
+                "3"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PAYMENT PROOF IMAGE",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE-URL}}/payment-proof/1738838475307-WhatsApp Image 2025-02-04 at 12.59.42.jpeg",
+              "host": [
+                "{{BASE-URL}}"
+              ],
+              "path": [
+                "payment-proof",
+                "1738838475307-WhatsApp Image 2025-02-04 at 12.59.42.jpeg"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "SHOW ALL BY CUSTOMER",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Nywicm9sZSI6IkNVU1RPTUVSIiwiaWF0IjoxNzY4Mjc4OTU5LCJleHAiOjE3NjgzNjUzNTl9.T83yAA5NmEKidnnq_Fm-h_bkgI1y-1Cq9Od4Hc_pL0w",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "app-key",
+                "value": "{{APP-KEY}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE-URL}}/payments/me?page=1&quantity=100&search",
+              "host": [
+                "{{BASE-URL}}"
+              ],
+              "path": [
+                "payments",
+                "me"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "quantity",
+                  "value": "100"
+                },
+                {
+                  "key": "search",
+                  "value": null
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "SHOW DETAIL BY CUSTOMER",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6IkNVU1RPTUVSIiwiaWF0IjoxNzM4OTE3Mjc2LCJleHAiOjE3MzkwMDM2NzZ9.zvPUlArJ-Rvxj49e5hjxe0bZUm0c-SIBhvHqRqEWUjo",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "app-key",
+                "value": "{{APP-KEY}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE-URL}}/payments/me/3",
+              "host": [
+                "{{BASE-URL}}"
+              ],
+              "path": [
+                "payments",
+                "me",
+                "3"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "VERIFY",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzM4ODk1NzU1LCJleHAiOjE3Mzg5ODIxNTV9.1KMQGILvTOc5D5Gonr82lyn0Q1c5-tq_99byc1T90Fk",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "app-key",
+                "value": "{{APP-KEY}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE-URL}}/payments/3",
+              "host": [
+                "{{BASE-URL}}"
+              ],
+              "path": [
+                "payments",
+                "3"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DROP",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzM4ODk1NzU1LCJleHAiOjE3Mzg5ODIxNTV9.1KMQGILvTOc5D5Gonr82lyn0Q1c5-tq_99byc1T90Fk",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "app-key",
+                "value": "{{APP-KEY}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE-URL}}/payments/2",
+              "host": [
+                "{{BASE-URL}}"
+              ],
+              "path": [
+                "payments",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "AUTHENTICATION",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "app-key",
+            "value": "{{APP-KEY}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"username\":\"iamfahryadmin\",\n    \"password\":\"121208fr\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{BASE-URL}}/auth",
+          "host": [
+            "{{BASE-URL}}"
+          ],
+          "path": [
+            "auth"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
